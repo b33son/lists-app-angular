@@ -1,5 +1,3 @@
-// app/recipes/recipe-list/recipe-item/recipe-item.component.ts
-
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Recipe } from '../../recipe.model';
@@ -13,10 +11,6 @@ export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
   @Input() index: number;
 
-  constructor() { }
-
   ngOnInit() {
   }
-
-
 }
