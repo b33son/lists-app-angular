@@ -1,17 +1,13 @@
-/**
- * File: /Users/michaelbeeson/Documents/VSCode/angular-001/lists-pro/src/app/shopping-list/store/shopping-list.actions.ts
- */
+import { Action } from '@ngrx/store';
 
-import { Action } from "@ngrx/store";
+import { Ingredient } from '../../shared/ingredient.model';
 
-import { Ingredient } from "../../shared/ingredient.model";
-
-export const ADD_INGREDIENT = "ADD_INGREDIENT";
-export const ADD_INGREDIENTS = "ADD_INGREDIENTS";
-export const UPDATE_INGREDIENT = "UPDATE_INGREDIENT";
-export const DELETE_INGREDIENT = "DELETE_INGREDIENT";
-export const START_EDIT = "START_EDIT";
-export const STOP_EDIT = "STOP_EDIT";
+export const ADD_INGREDIENT = 'ADD_INGREDIENT';
+export const ADD_INGREDIENTS = 'ADD_INGREDIENTS';
+export const UPDATE_INGREDIENT = 'UPDATE_INGREDIENT';
+export const DELETE_INGREDIENT = 'DELETE_INGREDIENT';
+export const START_EDIT = 'START_EDIT';
+export const STOP_EDIT = 'STOP_EDIT';
 
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
@@ -28,7 +24,7 @@ export class AddIngredients implements Action {
 export class UpdateIngredient implements Action {
   readonly type = UPDATE_INGREDIENT;
 
-  constructor(public payload: { ingredient: Ingredient }) {}
+  constructor(public payload: {ingredient: Ingredient}) {}
 }
 
 export class DeleteIngredient implements Action {
@@ -46,9 +42,9 @@ export class StopEdit implements Action {
 }
 
 export type ShoppingListActions =
-  | AddIngredient
-  | AddIngredients
-  | UpdateIngredient
-  | DeleteIngredient
-  | StartEdit
-  | StopEdit;
+  AddIngredient |
+  AddIngredients |
+  UpdateIngredient |
+  DeleteIngredient |
+  StartEdit |
+  StopEdit;

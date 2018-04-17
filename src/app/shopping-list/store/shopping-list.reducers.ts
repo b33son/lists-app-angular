@@ -1,9 +1,6 @@
-/**
- * File: /Users/michaelbeeson/Documents/VSCode/angular-001/lists-pro/src/app/shopping-list/store/shopping-list.reducers.ts
- */
+import * as ShoppingListActions from './shopping-list.actions';
 
-import * as ShoppingListActions from "./shopping-list.actions";
-import { Ingredient } from "../../shared/ingredient.model";
+import { Ingredient } from '../../shared/ingredient.model';
 
 export interface State {
   ingredients: Ingredient[];
@@ -12,15 +9,15 @@ export interface State {
 }
 
 const initialState: State = {
-  ingredients: [new Ingredient("Apples", 5), new Ingredient("Tomatoes", 10)],
+  ingredients: [
+    new Ingredient('Apples', 5),
+    new Ingredient('Tomatoes', 10),
+  ],
   editedIngredient: null,
   editedIngredientIndex: -1
 };
 
-export function shoppingListReducer(
-  state = initialState,
-  action: ShoppingListActions.ShoppingListActions
-) {
+export function shoppingListReducer(state = initialState, action: ShoppingListActions.ShoppingListActions) {
   switch (action.type) {
     case ShoppingListActions.ADD_INGREDIENT:
       return {
@@ -56,7 +53,7 @@ export function shoppingListReducer(
         editedIngredientIndex: -1
       };
     case ShoppingListActions.START_EDIT:
-      const editedIngredient = { ...state.ingredients[action.payload] };
+      const editedIngredient = {...state.ingredients[action.payload]};
       return {
         ...state,
         editedIngredient: editedIngredient,

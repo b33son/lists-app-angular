@@ -1,7 +1,3 @@
-/**
- * File: /Users/michaelbeeson/Documents/VSCode/angular-001/lists-pro/src/app/auth/signup/signup.component.ts
- */
-
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
