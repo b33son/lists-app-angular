@@ -14,18 +14,15 @@ import { AuthGuard } from "../auth/auth-guard.service";
  */
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    HomeComponent
-  ],
-  imports: [
-    SharedModule,
-    AppRoutingModule
-  ],
-  exports: [
-    AppRoutingModule,
-    HeaderComponent
-  ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
+  declarations: [HeaderComponent, HomeComponent],
+  imports: [SharedModule, AppRoutingModule],
+  exports: [AppRoutingModule, HeaderComponent],
+  providers: [
+    //  ShoppingListService,
+    RecipeService,
+    DataStorageService,
+    AuthService,
+    AuthGuard
+  ]
 })
-export class CoreModule { }
+export class CoreModule {}
